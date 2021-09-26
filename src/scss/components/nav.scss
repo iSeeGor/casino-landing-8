@@ -1,0 +1,192 @@
+.menu-section {
+
+	background: #FFFFFF;
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.main-menu {
+
+	position: relative;
+	z-index: 1;
+	padding: 10px 0;
+
+	&__list {
+
+		@include reset-list;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		li {
+
+			margin: 0;
+			padding: 0;
+			
+			&::before {
+				
+				display: none;
+			}
+		}
+	}
+
+	&__link {
+		
+		padding: 15px 16px;
+		display: flex;
+		align-items: center;
+		color: $colorBlack;
+		font-family: $fontRubik;
+		font-size: 30px;
+		line-height: 1;
+		font-weight: $regular;
+		text-transform: uppercase;
+		transition: all $transition;
+		text-shadow: 0px 0px 5.13355px rgba(255, 255, 255, 0.75);
+
+		img {
+
+			margin-right: 8px;
+			width: 34px;
+			height: 34px;
+		}
+
+		span {
+
+			margin-top: 4px;
+		}
+
+		&:hover {
+
+			text-decoration: none;
+			text-shadow: 0px 0px 3.86241px rgba(255, 255, 255, 0);
+		}
+	}
+}
+
+@media (max-width: 1199.98px){
+
+
+	.main-menu {
+
+		&__link {
+
+			font-size: 22px;
+			padding: 12px 22px;
+
+			img {
+
+				width: 32px;
+				height: 32px;
+			}
+		}
+	}
+}
+
+@media (max-width: 991.98px){
+
+	
+	.main-menu {
+
+		&__link {
+
+			font-size: 18px;
+			padding: 10px 14px;
+
+			img {
+
+				width: 28px;
+				height: 28px;
+			}
+		}
+	}
+
+}
+
+@media (max-width: 767.98px){
+
+	.menu-section {
+
+		padding: 0;
+	}
+
+	.main-menu {
+
+		padding: 10px 0 6px;
+
+		&__list {
+
+			white-space: nowrap;
+			overflow-x: scroll;
+			justify-content: space-around;
+			padding-bottom: 4px;
+		}
+	
+		&__link {
+
+			font-size: 16px;
+			padding: 8px 12px;
+			flex-direction: column;
+
+			img {
+
+				margin-right: 0;
+				margin-bottom: 2px;
+				width: 26px;
+				height: 26px;
+			}
+		}
+	}
+
+	::-webkit-scrollbar {
+		-webkit-appearance: none;
+	}
+
+	::-webkit-scrollbar:horizontal {
+		height: 2px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: #f1ceff;
+	}
+
+	::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+
+}
+
+@media (max-width: 575.98px){
+
+	.menu-section {
+
+		padding: 0;
+	}
+
+	
+	.main-menu {
+
+		&__list {
+
+			justify-content: space-between;
+		}
+
+		&__link {
+
+			font-size: 14px;
+			padding: 6px 10px;
+
+			img {
+
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+}
+
+@media (max-width: 480.98px){
+}
+@media (max-width: 374px){
+}
+@media (max-width: 350px){
+}

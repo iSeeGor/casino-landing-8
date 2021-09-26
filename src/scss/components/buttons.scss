@@ -1,0 +1,194 @@
+.button-base,
+.button-primary,
+.button-secondary {
+    position: relative;
+    display: inline-block;
+    border: 0;
+    background: none;
+    padding: 0;
+    text-decoration: none;
+    text-align: center;
+    color: $colorBody;
+    cursor: pointer;
+}
+
+.button-primary {
+
+    font-family: $fontRubik;
+    font-weight: $black;
+    font-size: 19px;
+    height: 50px;
+    padding: 0 44px;
+    width: auto;
+    line-height: 1;
+    text-transform: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    background: $colorLink;
+    // overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &:hover {
+        text-decoration: none;
+        color: white;
+        background: #c13cff;
+
+    }
+
+    &:active {
+        
+        background: #8900c9;
+    }
+
+    &--pure {
+
+        box-shadow: inset 0 0 0 1px $colorLink;
+        background: transparent !important;
+        color: $colorLink;
+
+        &:hover {
+
+            color: #d06bff;
+            box-shadow: 0 0 0 1px #c13cff;
+        }
+
+        &:active {
+
+            background: rgba(0, 0, 0, 0.1) !important;
+        }
+    }
+
+    &--large {
+
+        height: 76px;
+        font-size: 30px;
+        padding: 0 70px;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .button-primary {
+        font-size: 18px;
+        height: 48px;
+        padding: 0 40px;
+
+        &--large {
+            height: 68px;
+            font-size: 28px;
+            padding: 0 64px;
+            border-radius: 12px;
+        }
+    }
+
+}
+
+@media (max-width: 991.98px) {
+    .button-primary {
+        font-size: 16px;
+        height: 46px;
+        padding: 0 36px;
+        border-radius: 8px;
+
+        &--large {
+            height: 64px;
+            font-size: 26px;
+            padding: 0 64px;
+            border-radius: 10px;
+        }
+    }
+
+}
+
+@media (max-width: 767.98px) {
+    .button-primary {
+        font-size: 16px;
+        height: 42px;
+        padding: 0 32px;
+        border-radius: 6px;
+
+        &--large {
+            height: 68px;
+            font-size: 26px;
+            padding: 0 68px;
+            border-radius: 10px;
+        }
+    }
+
+}
+
+@media (max-width: 575.98px) {
+    .button-primary {
+        font-size: 13px;
+        font-weight: $medium;
+        text-transform: uppercase;
+        height: 38px;
+        padding: 0 28px;
+        border-radius: 4px;
+        // padding-top: 2px;
+
+        &--large {
+            height: 64px;
+            font-size: 26px;
+            padding: 0 64px;
+            border-radius: 10px;
+        }
+    }
+    
+}
+
+@media (max-width: 480.98px) {
+    .button-primary {
+        font-size: 12px;
+        height: 34px;
+        padding: 0 24px;
+        padding-top: 2px;
+
+        &--large {
+            height: 60px;
+            font-size: 24px;
+            padding: 0 60px;
+            border-radius: 10px;
+        }
+    }
+}
+
+@media (max-width: 374px) {
+    .button-primary {
+        font-size: 10px;
+        height: 32px;
+        padding: 0 20px;
+        padding-top: 2px;
+
+        &--large {
+            height: 50px;
+            font-size: 20px;
+            padding: 0 50px;
+            border-radius: 8px;
+        }
+
+    }
+
+}
+
+@media (max-width: 350px) {
+    .button-primary {
+
+        height: 30px;
+        padding: 0 18px;
+        padding-top: 2px;
+
+        &--large {
+            height: 44px;
+            font-size: 18px;
+            padding: 0 44px;
+            border-radius: 6px;
+        }
+    }
+}

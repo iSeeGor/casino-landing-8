@@ -1,0 +1,337 @@
+.tabs {
+
+	
+
+	&__header {
+
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		z-index: 1;
+		padding: 20px 0px 60px;
+		// margin-bottom: 40px;
+	}
+
+	&__button {
+
+		$this: &;
+
+		font-family: $fontHeadings;
+		font-weight: $medium;
+		color: white;
+		font-size: 18px;
+		text-transform: uppercase;
+		text-align: center;
+
+		* > {
+
+			pointer-events: none;
+		}
+
+		&-icon {
+
+			height: 100px;
+			width: 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 14px;
+			transition: box-shadow $transition; 
+			pointer-events: none;
+
+			position: relative;
+			z-index: 1;
+
+			&::before,
+			&::after {
+
+				content: '';
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				top: 0;
+				left: 0;
+				border-radius: 100%;
+				z-index: -1;
+			}
+
+			&::before {
+
+				background: linear-gradient(135deg, #FFCD6D 0%, #D09932 100%);
+				box-shadow: 0px 4px 18px rgba(207, 152, 50, 0.5);
+			}
+
+			&::after {
+
+				background: $colorBodyBg;
+				top: 5px;
+				left: 5px;
+				width: calc(100% - 10px);
+				height: calc(100% - 10px);
+			}
+		}
+
+		span {
+
+			pointer-events: none;
+		}
+
+		
+		& {
+
+			cursor: pointer;
+			
+			&:hover {
+
+				color: white;
+			}
+		}
+
+		&:hover {
+
+			text-decoration: none;
+
+			#{$this}-icon {
+
+				&::before {
+
+					box-shadow: 0px 4px 18px rgba(207, 152, 50, 0.5),
+							0 0 10px 2px rgba(255, 255, 255, 0.5) ;
+				}
+			}
+		}
+
+		
+
+		&.active {
+
+			color: $colorGold;
+			
+			#{$this}-icon {
+
+				&::before {
+
+					box-shadow: 0px 4px 18px rgba(207, 152, 50, 0.5),
+							0 0 10px 2px rgba(255, 255, 255, 0.5) ;
+				}
+			}
+		}
+	}
+
+	&__body {
+
+		position: relative;
+		z-index: 1;
+	}
+
+	&__content {
+
+		grid-template-columns: repeat(4, 1fr);
+		gap: 20px;
+		display: none;
+
+
+		&.active {
+
+			display: grid;
+		}
+
+		.game-card--big {
+
+			grid-column-start: 1;
+			grid-column-end: 3;
+			grid-row-start: 1;
+			grid-row-end: 3;
+		}
+	}
+}
+
+@media (max-width: 1199.98px){
+	
+	.tabs {
+
+		&__header {
+
+			padding: 20px 0 50px;
+		}
+
+		&__button {
+			font-size: 16px;
+
+			&-icon {
+
+				height: 90px;
+				width: 90px;
+				padding: 26px 26px;
+			}
+		}
+		
+	}
+}
+
+@media (max-width: 991.98px){
+
+	.tabs {
+
+		&__header {
+
+			padding: 10px 0 40px;
+		}
+
+
+		&__button {
+
+			&-icon {
+
+				height: 80px;
+				width: 80px;
+				padding: 24px 24px;
+			}
+		}
+
+
+		&__content {
+
+			gap: 20px;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+	
+}
+
+@media (max-width: 767.98px){
+	.tabs {
+
+		&__header {
+
+			padding: 5px 0 30px;
+		}
+
+		&__button {
+
+			font-size: 14px;
+
+			&-icon {
+
+				height: 70px;
+				width: 70px;
+				padding: 22px 22px;
+				margin-bottom: 10px;
+
+				&::after {
+
+					background: $colorBodyBg;
+					top: 4px;
+					left: 4px;
+					width: calc(100% - 8px);
+					height: calc(100% - 8px);
+				}
+			}
+		}
+
+
+		&__content {
+
+			grid-template-columns: 1fr 1fr;
+			gap: 16px;
+		}
+	}
+}
+
+@media (max-width: 575.98px){
+	
+	.tabs {
+
+		&__button {
+
+			&-icon {
+
+				&::after {
+
+					background: $colorBodyBg;
+					top: 3px;
+					left: 3px;
+					width: calc(100% - 6px);
+					height: calc(100% - 6px);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 480.98px){
+	
+	.tabs {
+
+		&__header {
+
+			padding: 5px 0 25px;
+		} 
+
+		&__button {
+
+			font-size: 13px;
+
+			&-icon {
+
+				height: 60px;
+				width: 60px;
+				padding: 16px 16px;
+				margin-bottom: 8px;
+			}
+		}
+
+	}
+}
+
+@media (max-width: 374px){
+	
+	.tabs {
+
+		&__button {
+
+			font-size: 10px;
+
+			&-icon {
+
+				height: 54px;
+				width: 54px;
+				padding: 16px 16px;
+
+				&::after {
+
+					background: $colorBodyBg;
+					top: 2px;
+					left: 2px;
+					width: calc(100% - 4px);
+					height: calc(100% - 4px);
+				}
+			}
+		}
+
+	}
+}
+
+@media (max-width: 350px){
+	
+	.tabs {
+
+		&__button {
+
+			font-size: 9px;
+
+			&-icon {
+
+				height: 50px;
+				width: 50px;
+				padding: 14px 14px;
+			}
+		}
+
+
+		&__content {
+
+			gap: 14px;
+		}
+	}
+}

@@ -1,0 +1,151 @@
+.game-card {
+
+	$this: &;
+
+	position: relative;
+	padding-top: 75%;
+	overflow: hidden;
+	
+	border-radius: 20px;
+	cursor: pointer;
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+	filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.4));
+
+	
+
+	&__image {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		
+
+		&::before,
+		&::after {
+
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: #070707;
+			opacity: 0;
+			pointer-events: none;
+			transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+			border-radius: 20px;
+		}
+
+		&::after {
+
+			opacity: 1;
+			box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+			background: transparent;
+		} 
+
+		img {
+
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__button {
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -40%);
+		opacity: 0;
+		z-index: 2;
+		filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.4));
+		transition: opacity 0.8s cubic-bezier(0.075, 0.82, 0.165, 1), transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+		text-transform: uppercase;
+	}
+
+	&:hover {
+
+		box-shadow: 0px 4.04338px 10.1084px rgba(0, 0, 0, 0.5), 
+					inset 0px 2.02169px 0px rgba(255, 255, 255, 0.2);
+
+		#{$this}__image {
+
+			&::before {
+
+				opacity: 1;
+				background: rgba(7, 7, 7, 0.7);
+				box-shadow: inset 0 0 0 2px #AD00FF;
+			}
+		}
+
+		#{$this}__button {
+
+			opacity: 1;
+			transform: translate(-50%, -50%);
+		}
+	}
+}
+
+@media (max-width: 1199.98px){
+	
+
+}
+
+@media (max-width: 991.98px){
+
+	.game-card {
+
+		border-radius: 20px;
+
+		&__button {
+
+			
+		}
+	}
+	
+}
+
+@media (max-width: 767.98px){
+	
+}
+
+@media (max-width: 575.98px){
+	
+}
+
+@media (max-width: 480.98px){
+
+	.game-card {
+
+		border-radius: 15px;
+
+		&__image::after, 
+		&__image::before {
+
+			border-radius: 15px;
+		}
+	}
+	
+}
+
+@media (max-width: 374px){
+
+	.game-card {
+
+		border-radius: 12px;
+
+		&__image::after, 
+		&__image::before {
+
+			border-radius: 12px;
+		}
+	}
+	
+}
+
+@media (max-width: 350px){
+	
+}

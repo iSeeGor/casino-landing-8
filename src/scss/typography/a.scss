@@ -1,0 +1,12 @@
+a {
+
+	text-decoration: none;
+	color: $colorLink;
+	transition: color $transition;
+
+	&:hover {
+
+		text-decoration: underline;
+		color: $colorLink;
+	}
+}
